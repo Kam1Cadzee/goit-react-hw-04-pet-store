@@ -1,0 +1,26 @@
+.item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  box-sizing: border-box;
+  margin: 8px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+  width: 100%;
+}
+
+.text {
+  text-decoration: none;
+  text-align: center;
+  color: #4e4e4e;
+  font-size: 2em;
+  margin: 10px 0;
+}
+.text:hover {
+  color: #ffa974;
+}

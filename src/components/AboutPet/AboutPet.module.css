@@ -1,0 +1,16 @@
+.item {
+  padding: 20px;
+  max-width: 700px;
+}
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+.container img {
+  max-width: 400px;
+  object-fit: contain;
+}
+.info {
+  margin-left: 20px;
+  font-size: 20px;
+}
