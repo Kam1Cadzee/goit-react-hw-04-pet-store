@@ -26,6 +26,7 @@
     "lint:format": "prettier src/**/*.{js,css,json} --write",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "deploy-surge": "rc build/index.html build/200.html && surge -p build",
     "server": "json-server --delay 200 --port 4040 --watch src/server/db.json"
   },
   "eslintConfig": {
