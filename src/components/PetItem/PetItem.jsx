@@ -6,12 +6,12 @@ import css from './PetItem.module.css';
 const PetItem = ({ id, name, image, match }) => {
   const { path } = match;
   return (
-    <div className={css.item}>
-      <img src={image} alt="" />
-      <NavLink to={`${path}/${id}`} className={css.text}>
-        {name}
-      </NavLink>
-    </div>
+    <NavLink to={`${path}/${id}`} style={{ textDecoration: 'none' }}>
+      <div className={css.item}>
+        <img src={image} alt="" />
+        <p className={css.text}>{name}</p>
+      </div>
+    </NavLink>
   );
 };
 PetItem.propTypes = {
