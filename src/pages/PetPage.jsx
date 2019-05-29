@@ -13,8 +13,27 @@ class PetPage extends React.Component {
 
   componentDidMount() {
     const id = getIdFromProps(this.props);
-    PetsApi.getPet(id).then(pet => this.setState({ pet }));
+    this.fetchGetPet(id);
   }
+
+  componentDidUpdate(prevProps) {
+    const prevId = getIdFromProps(prevProps);
+    const id = getIdFromProps(this.props);
+    if (prevId !== id) {
+      this.fetchGetPet(id);
+    }
+  }
+
+  fetchGetPet = id => {
+    PetsApi.getPet(id).then(pet => {
+      if (!pet) {
+        const { history } = this.props;
+        history.push('/pets');
+        return;
+      }
+      this.setState({ pet });
+    });
+  };
 
   handleBack = () => {
     const { history } = this.props;
